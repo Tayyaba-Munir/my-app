@@ -1,8 +1,9 @@
-export default async function Home({params}:any){
+import React from 'react'
+
+const Page = async({params}:any) => {
     const fetchUser= await fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-    console.log(fetchUser)
     const res= await fetchUser.json()
-    //console.log(res)
-    return <div>{res.name}</div>
-    
+  return  <div>{res.name}</div>
 }
+
+export default Page
